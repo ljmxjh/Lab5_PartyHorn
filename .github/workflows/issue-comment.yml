@@ -7,8 +7,9 @@ jobs:
     if: github.event_name == 'issues'
     runs-on: ubuntu-latest
     steps:
-        -name: Add funny comment
-         with: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GIPHY_TOKEN: ${{ secrets.GIPHY_KEY }}
-          comment_type: 'gif'
+        - name: Add funny comment 
+          id: FunnyComment
+          with: 
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GIPHY_TOKEN: ${{ secrets.GIPHY_KEY }}
+            comment_type: 'gif'
