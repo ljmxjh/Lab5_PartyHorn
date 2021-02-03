@@ -4,11 +4,10 @@ on:
     types: [opened]
 jobs:
   comment:
-   if: github.event_name == 'issues'
-   runs-on: ubuntu-latest
-   steps:
-       -name: Add funny comment
-        id: FunnyComment
-        with:
+    if: github.event_name == 'issues'
+    runs-on: ubuntu-latest
+    steps:
+        -name: Add funny comment
+         with: 
           GIPHY_KEY: ${{ secrets.GIPHY_KEY }}
           comment_type: 'gif'
