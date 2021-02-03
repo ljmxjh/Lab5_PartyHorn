@@ -1,13 +1,10 @@
-// main.js
 
-// TODO
 var vol= 1;
-
 
 document.getElementById("radio-air-horn").addEventListener("click",changeImageAir);
 document.getElementById("radio-car-horn").addEventListener("click",changeImageCar);
 document.getElementById("radio-party-horn").addEventListener("click",changeImageparty);
-document.getElementById("volume-number").addEventListener("input", changeVolNumberInput);
+document.getElementById("volume-number").addEventListener("input", changeVolNumber);
 document.getElementById("volume-number").addEventListener("click", changeVolNumber);
 document.getElementById("volume-slider").addEventListener("input", changeVolNumberSlide);
 document.getElementById("honk-btn").addEventListener("click", displaySound);
@@ -41,14 +38,6 @@ function checkVol(){
 }
 
 function changeVolNumber(){
-    var volume=parseInt(document.getElementById("volume-number").value);
-    vol= volume/100;
-    changeVolImage(vol);
-    document.getElementById('volume-slider').value= volume;
-    checkVol();
-}
-
-function changeVolNumberInput(){
     var volume=parseInt(document.getElementById("volume-number").value);
     vol= volume/100;
     changeVolImage(vol);
@@ -94,13 +83,11 @@ function changeImageAir() {
 
 function changeImageCar() {
     document.getElementById("sound-image").src = "./assets/media/images/car.svg";
-    return true;
 
 }
 
 function changeImageparty() {
     document.getElementById("sound-image").src = "./assets/media/images/party-horn.svg";
-    return true;
 
 }
 
